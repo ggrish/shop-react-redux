@@ -14,6 +14,7 @@ import {Router, Route} from 'react-router'
 import reducers from 'reducers'
 import Layout from 'containers/layout'
 import Phones from 'containers/phones'
+import Phone from 'containers/phone'
 
 const store = createStore(reducers, composeWithDevTools(
   applyMiddleware(thunk)
@@ -27,6 +28,7 @@ ReactDOM.render(
         <Route component={Layout}>
           <Route path='/' component={Phones} />
           </Route>
+          <Route path='phones/:id' component={Phone} />
       </Router>
   </Provider>,
   document.getElementById('root')
